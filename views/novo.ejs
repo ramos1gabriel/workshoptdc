@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <% include import.ejs %>
+    </head>
+    <body>
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+        <% include header.ejs %>
+      <main class="mdl-layout__content mdl-color--grey-100">
+        <div class="mdl-grid demo-content">
+            <div class="mdl-grid">
+                <div class="mdl-layout-spacer"></div>    
+                    <section class="section--center mdl-grid mdl-shadow--4dp mdl-color--white">
+    
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <div class="alinhar-centro">
+                                <i class="material-icons mdl-list__item-avatar">person</i>
+                                <span style="padding-left:5px;vertical-align: baseline;"><%= title %></span>
+                            </div>
+    
+                            <form action="<%= action %>" id="formulario-cadastro" method="post" name="novo">
+                                <fieldset>
+                                    <ul class="mdl-list">
+                                        <!-- CAMPO NOME -->
+                                        <li class="mdl-list__item">			 		  
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                <input class="mdl-textfield__input" type="text" id="input-nome" name="nome" value="<%= doc.nome %>"/>
+                                                <label class="mdl-textfield__label" for="input-nome">Nome</label>
+                                            </div>
+                                        </li>
+                                
+                                        <!-- CAMPO IDADE -->
+                                        <li class="mdl-list__item">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                <input class="mdl-textfield__input" type="number" id="input-idade" name="idade" value="<%= doc.idade %>"/>
+                                                <label class="mdl-textfield__label" for="input-idade">Idade</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </fieldset>
+                            
+                            <div class="mdl-grid">
+                                <div class="mdl-layout-spacer"></div>
+                                <div class="mdl-cell mdl-cell--4-col" style="padding-right:10px;">
+                                    <button type="button" onclick="validarFormulario();" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Salvar</button>
+                                </div>
+                            </div>  
+                        </form>
+                    </div>
+                </section>
+                <div class="mdl-layout-spacer"></div>
+            </div>
+        </div>
+      </main>
+    </div>
+    <script src="../stylesheets/mdl/material.min.js"></script>
+  </body>
+</html>
+
+<script>
+function validarFormulario(){
+    var nome = document.getElementById("input-nome");
+    var idade = document.getElementById("input-idade");
+    var passou = true;
+
+    if(nome.value == ""){
+        nome.style.borderColor = "red";
+        passou = false;
+    } else {
+        nome.style.borderColor = "#3f51b5";
+    }
+
+    if(idade.value == ""){
+        idade.style.borderColor = "red";
+        passou = false;
+    } else {
+        nome.style.borderColor = "#3f51b5";
+    }
+
+    if(passou){
+        document.forms['novo'].submit();
+    }
+}
+</script>
