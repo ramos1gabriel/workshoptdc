@@ -9,5 +9,5 @@ https://material.io/tools/icons/?style=baseline
 MongoDB:
 https://mongodbwise.wordpress.com/2014/05/22/mongodb-guia-rapido/
 
-TUTOTIAL AVANÇADO:
+TUTORIAIS AVANCADO:
 https://rocketseat.com.br/
