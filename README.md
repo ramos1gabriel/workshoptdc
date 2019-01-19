@@ -7,6 +7,17 @@
 * Material Designer <font color="red">*extra</font>
 * MongoDB
 
+## Construção
+
+Você precisará do [Node.js](https://nodejs.org) instalado no seu computador para construir este aplicativo.
+
+```bash
+$ git clone https://github.com/ramos1gabriel/workshoptdc
+$ cd workshoptdc
+$ npm install
+$ npm start
+```
+
 ### Descrição do projeto
 
 
