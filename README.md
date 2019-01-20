@@ -18,7 +18,7 @@ $ npm install
 $ npm start
 ```
 
-## O que falta?
+## Em andamento?
 
 ```bash
 1 - Validar duplicidade no cadastro
