@@ -1,63 +1,74 @@
 <!DOCTYPE html>
-    <html>
+<html>
     <head>
         <% include import.ejs %>
     </head>
     <body>
-    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-        <% include header.ejs %>
-      <main class="mdl-layout__content mdl-color--grey-100">
-        <div class="mdl-grid demo-content">
-            <div class="mdl-grid">
-                <div class="mdl-layout-spacer"></div>    
-                    <section class="section--center mdl-grid mdl-shadow--4dp mdl-color--white">
+        <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+            <% include header.ejs %>
+            <main class="mdl-layout__content mdl-color--grey-100">
+                <div class="mdl-grid demo-content">
+                    <!-- INICIO CONTEUDO -->
+                    <div class="mdl-grid">
+                        <div class="mdl-layout-spacer"></div>    
+                            <section class="section--center mdl-grid mdl-shadow--4dp mdl-color--white">
     
-                        <div class="mdl-cell mdl-cell--12-col">
-                            <div class="alinhar-centro">
-                                <i class="material-icons mdl-list__item-avatar">person</i>
-                                <span style="padding-left:5px;vertical-align: baseline;"><%= title %></span>
-                            </div>
+                                <div class="mdl-cell mdl-cell--12-col">
+                                    <div class="alinhar-centro">
+                                        <i class="material-icons mdl-list__item-avatar">person</i>
+                                        <span style="padding-left:5px;vertical-align: baseline;"><%= title %></span>
+                                    </div>
     
-                            <form action="<%= action %>" id="formulario-cadastro" method="post" name="novo">
-                                <fieldset>
-                                    <ul class="mdl-list">
-                                        <!-- CAMPO NOME -->
-                                        <li class="mdl-list__item">			 		  
-                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                <input class="mdl-textfield__input" type="text" id="input-nome" name="nome" value="<%= doc.nome %>"/>
-                                                <label class="mdl-textfield__label" for="input-nome">Nome</label>
-                                            </div>
-                                        </li>
+                                    <form action="<%= action %>" id="formulario-cadastro" method="post" name="novo">
+                                        <fieldset>
+                                            <ul class="mdl-list">
+                                                <!-- CAMPO NOME -->
+                                                <li class="mdl-list__item">			 		  
+                                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                        <input class="mdl-textfield__input" type="text" id="input-nome" name="nome" value="<%= doc.nome %>" onblur="limpaErros();"/>
+                                                        <label class="mdl-textfield__label" for="input-nome">Nome</label>
+                                                    </div>
+                                                </li>
                                 
-                                        <!-- CAMPO IDADE -->
-                                        <li class="mdl-list__item">
-                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                <input class="mdl-textfield__input" type="number" id="input-idade" name="idade" value="<%= doc.idade %>"/>
-                                                <label class="mdl-textfield__label" for="input-idade">Idade</label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </fieldset>
+                                                <!-- CAMPO IDADE -->
+                                                <li class="mdl-list__item">
+                                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                        <input class="mdl-textfield__input" type="number" id="input-idade" name="idade" value="<%= doc.idade %>"/>
+                                                        <label class="mdl-textfield__label" for="input-idade">Idade</label>
+                                                    </div>
+                                                </li>
+                                                <li class="mdl-list__item">
+                                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="msgErro">
+                                                        <font color="red"><%= erro.duplicidade %></font>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </fieldset>
                             
-                            <div class="mdl-grid">
-                                <div class="mdl-layout-spacer"></div>
-                                <div class="mdl-cell mdl-cell--4-col" style="padding-right:10px;">
-                                    <button type="button" onclick="validarFormulario();" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Salvar</button>
+                                        <div class="mdl-grid">
+                                            <div class="mdl-layout-spacer"></div>
+                                            <div class="mdl-cell mdl-cell--4-col" style="padding-right:10px;">
+                                                <button type="button" onclick="validarFormulario();" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Salvar</button>
+                                            </div>
+                                         </div>  
+                                    </form>
                                 </div>
-                            </div>  
-                        </form>
+                            </section>
+                        <div class="mdl-layout-spacer"></div>
                     </div>
-                </section>
-                <div class="mdl-layout-spacer"></div>
-            </div>
+                    <!-- FIM CONTEUDO -->
+                </div>
+            </main>
         </div>
-      </main>
-    </div>
-    <script src="../stylesheets/mdl/material.min.js"></script>
-  </body>
+        <script src="../stylesheets/mdl/material.min.js"></script>
+    </body>
 </html>
 
 <script>
+function limpaErros(){
+    document.getElementById("msgErro").innerHTML = "";
+}
+
 function validarFormulario(){
     var nome = document.getElementById("input-nome");
     var idade = document.getElementById("input-idade");

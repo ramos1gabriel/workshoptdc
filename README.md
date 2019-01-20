@@ -21,8 +21,8 @@ $ npm start
 ## Em andamento?
 
 ```bash
-1 - Validar duplicidade no cadastro
-2 - Layout pagina inicial
+1 - Validar duplicidade no cadastro (X)
+2 - Layout pagina inicial (X)
 3 - Fazer paginação (Tutorial 2)
 ```
 

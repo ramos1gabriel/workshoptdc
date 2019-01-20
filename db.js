@@ -19,6 +19,11 @@ function findOne(id, callback){
     global.conn.collection("customers").find(new ObjectId(id)).toArray(callback);
 }
 
+/* CONSULTA POR NOME */
+function findOneByNome(nome, callback){  
+    global.conn.collection("customers").find({"nome" : nome}).toArray(callback);
+}
+
 /* UPDATE */
 function update(id, customer, callback){
     global.conn.collection("customers").replaceOne({_id:new ObjectId(id)}, customer, callback);
@@ -29,4 +34,4 @@ function deleteOne(id, callback){
     global.conn.collection("customers").deleteOne({_id: new ObjectId(id)}, callback);
 }
 
-module.exports = { findAll, insert, findOne, update, deleteOne }
+module.exports = { findAll, insert, findOne, findOneByNome, update, deleteOne }
