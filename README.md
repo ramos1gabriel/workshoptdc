@@ -44,5 +44,5 @@ MongoDB é um banco de dados orientado a documentos livre, de código aberto e m
 ### Créditos
 * Tutorial CRUD em Node.js com driver nativo do MongoDB no blog LuizTools
 * Links: 
-Parte 1: https://goo.gl/Uc2XL5 (CRUD)
-Parte 2: https://goo.gl/ffjkZR (Paginação)
+* Parte 1: https://goo.gl/Uc2XL5 (CRUD)
+* Parte 2: https://goo.gl/ffjkZR (Paginação)
