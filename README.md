@@ -18,6 +18,14 @@ $ npm install
 $ npm start
 ```
 
+## O que falta?
+
+```bash
+1 - Validar duplicidade no cadastro
+2 - Layout pagina inicial
+3 - Fazer paginação (Tutorial 2)
+```
+
 ### Descrição do projeto
 
 
